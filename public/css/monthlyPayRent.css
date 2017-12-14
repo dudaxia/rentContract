@@ -1,0 +1,435 @@
+body{
+	background: #f2f2f2;
+}
+.left{
+	text-align: left;
+}
+.center{
+	text-align: center;
+}
+.right{
+	text-align: right;
+}
+section.top-half{
+	background: linear-gradient(to right,#475564 0%, #39444E 100%);
+}
+
+header.top{
+	margin-bottom: 10px;
+}
+.top .back-button{
+	float: left;
+	width: 8%;
+	height: 100%;
+}
+.top .back-button .back-icon{
+	display: block;
+	width: 10px;
+	height: 16px;
+	margin-top: 14px;
+	background: url(../img/back_white@2x.png) no-repeat;
+	background-size: 100%;
+}
+.top .title{
+	float: left;
+	width: 70%;
+	font-size: 17px;
+	text-align: center;
+	text-indent: 10%;
+}
+.top .history{
+	float: right;
+	width: 24px;
+}
+.top .history .history-icon{
+	display: block;
+	width: 24px;
+	height: 24px;
+	margin-top: 10px;
+	background: url(../img/history@2x.png) no-repeat;
+	background-size: 100%;
+}
+.top .my-contract{
+	float: left;
+	width: 22%;
+	font-size: 14px;
+	text-align: right;
+}
+
+.top .cancel-wrapper {
+	position: absolute;
+	top: 36px;
+	right: 15px;
+	width: 180px;
+	height: 51px;
+}
+.top .cancel-wrapper .arrow-wrapper {
+	height: 10px;
+	width: 100%;
+}
+.top .cancel-wrapper .arrow {
+	position: absolute;
+	top: 0px;
+	right: 10px;
+	width: 0;
+	height: 0;
+	border-bottom: 10px solid #FF6138;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 0px;
+}
+
+.top .cancel-wrapper .cancel-tip {
+	height: 41px;
+	width: 100%;
+	background-color: #FF6138;
+	line-height: 41px;
+	color: #fff;
+	border-radius: 2px;
+}
+.top .cancel-wrapper .cancel-tip .icon-warn{
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	vertical-align: middle;
+	margin-top: -2px;
+	margin-left: 10px;
+	background: url(../img/warning@3x.png) no-repeat;
+	background-size: 100%;
+}
+.top .cancel-wrapper .cancel-tip .warn-text {
+	padding-left: 6px;
+	padding-right: 5px;
+	font-size: 14px;
+}
+.top .cancel-wrapper .cancel-tip .icon-close{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	vertical-align: middle;
+	margin-top: -2px;
+	margin-right: 15px;
+	background: url(../img/close@2x.png) no-repeat;
+	background-size: 100%;
+}
+
+section.main{
+
+}
+.repay-tip{
+	padding: 0 15px;
+	background: #FFB94D;
+	font-size: 14px;
+	color: #212121;
+	line-height: 44px;
+}
+.repay-tip .icon-close{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	vertical-align: middle;
+	margin-top: -2px;
+	margin-right: 15px;
+	background: url(../img/close@2x.png) no-repeat;
+	background-size: 100%;
+}
+@media screen and (max-width: 340px){
+	.repay-tip{
+		font-size: 12px;
+	}
+}
+.overdue{
+	color: #FF6138;
+}
+.overdue span {
+	padding: 3px;
+}
+.main {
+	height: 199px;
+}
+.main .pay-info{
+	text-align: center;
+}
+.main .pay-info .pay-tip{
+	position: relative;
+	font-size: 12px;
+	color: #C0C0C0;
+}
+.main .pay-info .pay-tip .overdue {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+.main .pay-info .pay-tip .warn-icon{
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	vertical-align: middle;
+	margin: -2px 6px 0 10px;
+	background: url(../img/warning@2x.png) no-repeat;
+	background-size: 100%;
+}
+.main .pay-info .payment{
+	padding: 12px 0;
+	overflow: hidden;
+}
+.main .pay-info .payment .payment-money{
+	font-size: 36px;
+	color: #FFFFFF;
+	line-height: 36px;
+}
+.main .pay-info .overdue-cost {
+	font-size: 12px;
+	color: #fff;
+	padding-bottom: 8px;
+}
+.main .pay-info .disable-button{
+	position: absolute;
+	left: 50%;
+	margin-left: -94px;
+	width: 188px;
+	height: 44px;
+	line-height: 44px;
+	border: 1px solid #808080;
+	text-align: center;
+	font-size: 16px;
+	color: #808080;
+	margin-bottom: 12px;
+}
+.main .pay-info .payment-button.canpay{
+	position: absolute;
+	left: 50%;
+	margin-left: -94px;
+	width: 188px;
+	height: 44px;
+	line-height: 44px;
+	border: 1px solid #FF6138;
+	text-align: center;
+	font-size: 16px;
+	color: #FF6138;
+	margin-bottom: 12px;
+}
+.main .pay-info .paybtn.payment-button {
+	-float: left;
+	position: absolute;
+  left: 50%;
+  margin-left: -94px;
+	-margin-left: 60px;
+	width: 188px;
+	height: 44px;
+	line-height: 44px;
+	border: 1px solid #FF6138;
+	text-align: center;
+	font-size: 16px;
+	color: #FF6138;
+	margin-bottom: 12px;
+}
+.main .pay-info .payment-btn {
+	position: relative;
+	height: 44px;
+	margin-bottom: 12px;
+}
+.main .pay-info .paybtn {
+	display: block;
+	width: 188px;
+	height: 44px;
+	line-height: 44px;
+	text-align: center;
+	font-size: 16px;
+	margin: 12px 0;
+}
+.main .pay-info .paybtn.disable-button {
+	position: static;
+	float: left;
+	margin-left: 60px;
+	color: #808080;
+	border: 1px solid #808080;
+}
+.main .pay-info .paybtn.open-pay {
+	position: relative;
+	float: right;
+	color: #808080;
+	margin-right: 60px;
+	background-color: #fff;
+	color: #ff6138;
+}
+.main .pay-info .recommend-icon {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 30px;
+	height: 30px;
+	background: url(../img/recommend@3x.png) no-repeat;
+	background-size: 30px 30px;
+}
+.main .pay-info .payment-tip-wrapper {
+	font-size: 12px;
+	color: #C0C0C0;
+	padding-bottom: 24px;
+}
+
+.main .pay-info .rent-info ul{
+	padding: 16px 0 10px;
+	margin-bottom: 0;
+	overflow: hidden;
+}
+.main .pay-info .rent-info ul li{
+	float: left;
+	width: 33.333%;
+}
+.main .pay-info .rent-info .rent-title{
+	font-size: 12px;
+	line-height: 22px;
+	color: #C0C0C0;
+}
+.main .pay-info .rent-info li.left {
+	text-align: left;
+}
+.main .pay-info .rent-info li.center {
+	text-align: center;
+}
+.main .pay-info .rent-info li.right {
+	text-align: right;
+}
+.main .pay-info .rent-info .rent-detail{
+	font-size: 16px;
+	line-height: 32px;
+	color: #FFFFFF;
+}
+
+footer.pay-history{
+	background: #fff;
+}
+.pay-history .history-title-wrapper {
+	height: 40px;
+	background: #F2F2F2;
+}
+.pay-history .history-title{
+	padding: 0 15px;
+	background: #fff;
+	font-size: 14px;
+	color: #808080;
+	line-height: 40px;
+}
+.pay-history .loading-pic {
+	text-align: center;
+	color: #808080;
+}
+.pay-history .loading-pic .loading-circle {
+	display: inline-block;
+	animation: picRotate 1s ease-in-out infinite;
+}
+@keyframes picRotate {
+	from {
+		transform: rotateZ(0deg);
+	}
+	to {
+		transform: rotateZ(360deg);
+	}
+}
+
+
+// .pay-history .history-list{
+// 	padding: 0 15px;
+// 	font-size: 14px;
+// }
+// .pay-history .history-list .history-list-title{
+// 	overflow: hidden;
+// 	line-height: 30px;
+// 	padding-top: 12px;
+// }
+// .pay-history .history-list .history-list-content{
+// 	font-size: 16px;
+// 	color: #808080;
+// }
+// .pay-history .history-list .history-list-content li{
+// 	overflow: hidden;
+// 	line-height: 32px;
+// }
+// .pay-history .history-list .history-list-content li span{
+// 	width: 25%;
+// }
+// .pay-history .history-list span{
+// 	text-align: center;
+// 	float: left;
+// 	width: 25%;
+// }
+
+.main .pay-info .payment-button.disabled, .main .pay-info .payment-button.disabled {
+	border-color: #aaa;
+    color: #aaa;
+}
+.clearfix:after {
+	content: '';
+	display: block;
+	height: 0;
+	clear: both;
+}
+.clearfix {
+	zoom: 1;
+}
+.history-list {
+	padding: 10px 6px;
+	background-color: #f2f2f2;
+}
+
+.history-list li {
+	height: 114px;
+	background-color: #fff;
+	display: flex;
+	margin-bottom: 10px;
+}
+.isPayOk {
+	float: left;
+	box-sizing: border-box;
+	width: 22px;
+	height: 114px;
+	background-color: #cecece;
+	color: #fff;
+	font-size: 12px;
+	line-height: 14px;
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 38px;
+}
+.last-need-pay .isPayOk {
+	background-color: #ff6138;
+}
+.pay-content-info {
+	float: left;
+	height: 100%;
+	flex: 1;
+	padding: 0 10px;
+	color: #808080;
+}
+
+.lastNeedPayDate {
+	font-size: 16px;
+  color: #212121;
+  line-height: 54px;
+  font-weight: 700;
+}
+.floatleft {
+	line-height: 26px;
+	float: left;
+}
+.floatright {
+	line-height: 26px;
+	float: right;
+}
+.linef2 {
+	height: 0;
+	border-bottom: 1px solid #f2f2f2;
+}
+.rentTypeRealDate {
+	margin-top: 2px;
+}
+
+// .btn-wrapper {
+// 	position: relative;
+// }
+// .payment-button {
+// 	position: absolute;
+// 	left: 50%;
+// 	margin-left: -94px;
+// }

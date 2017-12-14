@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>房租月付</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <!--  新 Bootstrap 核心 CSS 文件  -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!--  jQuery文件。务必在bootstrap.min.js 之前引入  -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <!--  最新的 Bootstrap 核心 JavaScript 文件  -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!--  私有css  -->
+    <link rel="stylesheet" type="text/css" href="../../../public/css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../../public/css/baseInfo.css">
+    <link rel="stylesheet" type="text/css" href="../../../public/css/checkout.css">
+</head>
+
+<body class="background-bj base-info">
+    <header class="top">
+        <div class="back-button">
+            <span class="back-icon"></span>
+        </div>
+        <div class="title">
+            退租申请
+        </div>
+    </header>
+    <main>
+        <div class="checkout-text">您的房东于
+            <span id="initiateDate"></span>
+            <br/>发起退租申请，您的租约将于
+            <span class="checkout-text-span" id="exitDate"></span>
+            </br>提前到期，是否同意该申请？
+        </div>
+        <div class="checkout-main">
+            <p>1.退租申请需要您在本日 24 点前确认</p>
+            <p>2.退租造成的各项结算请与房东自行商定；</p>
+            <p>3.退租日期为次日起至租约到期日；</p>
+        </div>
+    </main>
+    <div class="footer">
+        <div class="footer-left fl">
+            <a id="noagree" href="javascript:;">不同意</a>
+        </div>
+        <div class="footer-right fr">
+            <a id="agree" href="javascript:;">同意</a>
+        </div>
+        <div class="clear"></div>
+    </div>
+</body>
+<script src="../../../public/config/config.js"></script>
+<script src="../../../public/js/common.js"></script>
+<script src="../../../public/lib/md5.js"></script>
+<script src="../../../public/lib/post.js"></script>
+<script src="../../../public/js/checkout.js"></script>
+</html>

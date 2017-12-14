@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>房租月付</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <!--  新 Bootstrap 核心 CSS 文件  -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!--  jQuery文件。务必在bootstrap.min.js 之前引入  -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <!--  最新的 Bootstrap 核心 JavaScript 文件  -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!--  私有css  -->
+    <link rel="stylesheet" type="text/css" href="../../../public/css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../../public/css/unconfirmed.css">
+    <style type="text/css">
+        .main .main-bg{
+            background: url('../../../public/img/noCract@2x.jpg') no-repeat;
+            background-size: 100%;
+        }
+        .tips {display: none;}
+    </style>
+</head>
+
+<body>
+    <!-- 头部 -->
+        <header class="top">
+            <div class="back-button">
+                <span class="back-icon"></span>
+            </div>
+            <div class="title">
+                房租月付
+            </div>
+            <div class="history">
+                <span class="history-icon"></span>
+            </div>
+        </header>
+        <!--主体-->
+        <section class="main">
+            <div class="main-bg">
+
+            </div>
+            <p class="tips" id="tip1">您当前没有月付订单哦<br/>建立租约后才能享受租房月付服务哦</p>
+            <p class="tips" id="tip2">您当前有一份待确认的合同哦<br/>请尽快完善资料</p>
+            <p class="tips" id="tip3">您当前还没有租房合同哦<br/>您可以请房东同我们联系以建立租约，<br/>联系电话：400-825-9200<br/>建立租约后您可享受-房租月付</p>
+<!--             <div class="confirm">
+                前去看房
+            </div> -->
+        </section>
+    <script src="../../../public/config/config.js"></script>
+    <script src="../../../public/js/common.js"></script>
+    <script src="../../../public/lib/util.js?v8"></script>
+    <script src="../../../public/lib/md5.js"></script>
+    <script src="../../../public/lib/post.js"></script>
+</body>
+<script>
+if (getArgs().tip) {
+    $('#' + getArgs().tip).show();
+} else {
+    $('#tip1').show();
+}
+
+$(function () {
+    $('.back-button').on('click', function () {
+        location.href = "innjia-js://closeView";
+    });
+
+    util.setBackToPrePage(true);
+});
+
+//
+( function(){
+    //根据是否有历史租约 控制图标的显示与隐藏
+    var methodId = "4031";
+    var methodParam = {};
+    methodParam.openId = getArgs().openId;
+    var info = postdata(methodId,methodParam);
+
+    $.ajax({
+        url: global.uip.url,
+        type: "post",
+        data: info,
+        success: function(jsonData) {
+            console.log("4031",jsonData);
+            var data = jsonData.res.data;
+            if( data && data.rows && data.rows.length == 0 ) {
+                $('.history-icon').hide();
+            } else {
+                $('.history-icon').show();
+            }
+        }
+    });
+} )();
+
+//点击查看历史
+$('.history').on('click', function () {
+    window.location.href = "payHistoryList.html?openId="+(getArgs().openId || getArgs().userId);
+});
+
+</script>
+</html>

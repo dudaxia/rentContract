@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>我的租约</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <!--  新 Bootstrap 核心 CSS 文件  -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://res.wx.qq.com/open/libs/weui/0.4.3/weui.min.css">
+    <!--  jQuery文件。务必在bootstrap.min.js 之前引入  -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <!--  最新的 Bootstrap 核心 JavaScript 文件  -->
+    <!--  私有css  -->
+    <link rel="stylesheet" type="text/css" href="../../../public/css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../../public/css/tenantInfo.css">
+</head>
+<script type="text/javascript">
+global = {
+    basePath: "${basePath}/public/"
+};
+</script>
+<style>
+body {font-family: PingFangSC-Regular;}
+
+.change-sel-option select {margin-right: 0px;}
+.form-text {padding: 0px 5px 0px 0px;}
+
+.mod-form-con {padding: 6px 24px 30px; background-color: #fff;}
+
+.mod-form .title {color: #000; font-size: 16px; margin-top: 24px;}
+.mod-form .form-label {margin-bottom: 0; font-weight: normal;}
+.mod-form .item { margin-bottom: 1px; margin-top: 5px; line-height: 38px; background: #fff; color: #808080; font-weight: normal; border-bottom: 1px solid #dedede; }
+.mod-form .info { float: right; width: 45%; text-align: right; }
+.mod-form .form-text { width: 100%; border: none; height: 38px; text-align: right; }
+.mod-form .form-sel { width: 80%; height: 38px; background: transparent; border: none; color: #999;}
+.mod-form .form-textarea { width: 100%; padding: 6px; border: none; line-height: 1.42857143; }
+.mod-form .change-text-value .arrow-r, .mod-form .change-sel-value .arrow-r, .mod-form .click-change-txt .arrow-r { margin-left: 5px; margin-top: 15px; }
+.mod-form .click-change-txt { color: #999; }
+.mod-form .click-change-txt a { color: #333; }
+.mod-form .click-change-txt .error { color: #e94c5d; }
+.mod-form .click-change-txt .succ { color: #417505; }
+.mod-form .change-sel-option { color: #999; }
+.mod-form .change-sel-option .arrow-b { margin-top: 19px; margin-left: 5px; }
+.bar-title {
+    font-family: PingFangSC-Regular;
+    font-size: 20px;
+    color: #FFFFFF;
+    letter-spacing: 0.38px;
+    font-weight: normal;
+    letter-spacing: 0.38px;
+    text-align: center;
+    margin: 0;
+    line-height: 40px;
+}
+.item.descript {border-bottom: 0px;}
+</style>
+<body>
+    <!-- 头部 1111 -->
+    <header class="top">
+        <div class="back-button">
+            <span class="back-icon"></span>
+        </div>
+        <div class="title">
+            我的租约
+        </div>
+        <div class="history">
+            <!-- <span class="history-icon"></span> -->
+        </div>
+    </header>
+    <!--主体-->
+
+<form class="mod-form" method="post" id="form" action="#">
+    <section class="main">
+        <h2 class="bar-title"><span id="tenantName">-</span> 请先完善您的信息</h2>
+
+        <div class="mod-form-con">
+            <div class="title">基本信息</div>
+
+            <div class="item"> <label class="form-label">银行卡号：</label>
+                <div class="info">
+                    <input type="text" class="form-text" name="backAccount" id="backAccount" placeholder="请输入">
+                </div>
+            </div>
+
+            <div class="item"> <label class="form-label">银行预留手机号：</label>
+                <div class="info">
+                    <input type="number" class="form-text" name="tenantBankMobile" id="tenantBankMobile" placeholder="请输入">
+                </div>
+            </div>
+            <div class="item descript">
+                <div class="">
+                    该银行卡号不用于交租绑定。
+                </div>
+            </div>
+
+            <div class="title">紧急联系人信息</div>
+
+            <div class="item"> <label class="form-label">紧急联系人关系：</label>
+                <div class="info">
+                    <div class="change-sel-option">
+                        <select dir="rtl" class="form-sel" name="contactRelationship" id="contactRelationship">
+                            <option value="父母">父母</option>
+                            <option value="兄弟姐妹">兄弟姐妹</option>
+                            <option value="同事">同事</option>
+                            <option value="同学">同学</option>
+                            <option value="朋友">朋友</option>
+                            <option value="亲属">亲属</option>
+                            <option value="配偶">配偶</option>
+                            <option value="其他">其他</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item"> <label class="form-label">紧急联系人姓名：</label>
+                <div class="info">
+                    <input type="text" class="form-text" name="contactName" id="contactName" placeholder="请输入">
+                </div>
+            </div>
+
+            <div class="item"> <label class="form-label">紧急联系人手机号：</label>
+                <div class="info">
+                    <input type="number" class="form-text" name="contactMobile" id="contactMobile" placeholder="请输入">
+                </div>
+            </div>
+<br><br><br>
+            <div id="datacontainer"></div>
+        </div>
+
+    </section>
+</form>
+
+    <!-- 底部 -->
+    <footer>
+        <div class="weui_btn_area btn-submit">
+            <a id="btnContractInputNext" class="weui_btn next-step" href="javascript:;">下一步</a>
+        </div>
+    </footer>
+
+    <!-- prompt 对话框 -->
+    <div class="weui_dialog_alert" id="dialog" style="display: none;">
+        <div class="weui_mask"></div>
+        <div class="weui_dialog">
+            <div class="weui_dialog_hd"><strong class="weui_dialog_title">-</strong></div>
+            <div class="weui_dialog_bd prompt_text"></div>
+            <div class="weui_dialog_ft">
+                <a href="javascript:;" class="weui_btn_dialog primary">确定</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script src="../../../public/lib/jquery.serializeObject.js"></script>
+<script src="../../../public/lib/md5.js"></script>
+<script src="../../../public/config/config.js"></script>
+<script src="../../../public/lib/post.js"></script>
+<script src="../../../public/js/common.js"></script>
+<script src="../../../public/js/tenantInfo.js?v2"></script>
+
+<script>
+
+</script>
+
+</html>

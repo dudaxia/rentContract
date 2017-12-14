@@ -1,0 +1,52 @@
+body{
+	background: #F2F2F2;
+}
+header.top{
+	margin-bottom: 26px;
+	background: linear-gradient(to right,#475564, #39444E);
+}
+.top .back-button{
+	float: left;
+	width: 10%;
+	height: 100%;
+}
+.top .back-button .back-icon{
+	display: block;
+	width: 10px;
+	height: 16px;
+	margin-top: 14px;
+	background: url(../img/back_white@2x.png) no-repeat;
+	background-size: 100%;
+}
+.top .title{
+	float: left;
+	width: 80%;
+    font-size: 16px;
+    text-align: center;
+}
+
+.main .main-bg{
+	width: 164px;
+	height: 140px;
+	background: url(../img/contractUnsign@2x.jpg) no-repeat;
+	background-size: 100%;
+	margin: 0 auto;
+	margin-top: 150px;
+	margin-bottom: 20px;
+}
+.main .tips{
+	text-align: center;
+	font-size: 16px;
+	color: #808080;
+	margin-bottom: 60px;
+	line-height: 36px;
+}
+.main .confirm{
+	width: 120px;
+	height: 44px;
+	line-height: 44px;
+	text-align: center;
+	color: #ff6138;
+	border: 1px solid #ff6138;
+	margin: 0 auto;
+}

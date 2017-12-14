@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>房租月付</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <!--  新 Bootstrap 核心 CSS 文件  -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!--  jQuery文件。务必在bootstrap.min.js 之前引入  -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <!--  最新的 Bootstrap 核心 JavaScript 文件  -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!--  私有css  -->
+    <link rel="stylesheet" href="../../../public/css/weui.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../public/css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../../public/css/monthlyPayRent.css">
+</head>
+
+<body>
+    <!-- 头部 -->
+    <section class="top-half">
+        <header class="top">
+            <div class="back-button">
+                <span class="back-icon"></span>
+            </div>
+            <div class="title">
+                房租月付
+            </div>
+        </header>
+        <div class="repay-tip" name="overdueTip" style="display: none;">
+            <span class="icon-close"></span><span class="">您的房租已超期<span class="overdue" name="overdueDays"> 3 </span>天，请及时交租</span>
+        </div>
+        <!--主体-->
+        <section class="main">
+
+            <div class="pay-info" style="display: none;">
+                <div class="pay-tip">
+                    <span class="expiration-data" name="planRepaymentDate">2017-10-10</span>
+                    <span>应还&nbsp;(元)</span>
+                    <span class="overdue" style="display: none;"><i class="warn-icon"></i>已超期<span name="overdueDays">3</span>天</span>
+                </div>
+                <div class="payment">
+                    <span class="payment-money" name="planRepaymentAmount">-</span>
+                </div>
+                <div class="overdue-cost">
+                    <span>(含超期费&nbsp;￥<span class="overdue-cost" name="overdueFee">-</span>)</span>
+                </div>
+                <!-- 已开通代扣 -->
+                <div class="payment-btn" style="display: block;" >
+                    <span class="payment-button canpay" style="display: block;">立即支付</span>
+                    <span class="disable-button" style="display: none;">未到交租日</span>
+                </div>
+                <!-- 未开通代扣 -->
+                <div class="disable-btn clearfix" style="display: none">
+                    <span class="paybtn payment-button" style="display: block;">立即支付</span>
+                    <span class="paybtn disable-button" style="display: none;">未到交租日</span>
+                    <span class="paybtn open-pay">开通代扣<span class="recommend-icon"></span></span>
+                </div>
+                <div class="payment-tip-wrapper">
+                    <span class="payment-tip" style="display: block;">已开通支付宝代扣</span>
+                </div>
+            </div>
+        </section>
+    </section>
+    <!--底部-->
+    <footer class="pay-history">
+        <div class="history-title-wrapper">
+            <p class="history-title" style="display: none;">
+                交租历史
+                (<span name="paidPeriod"></span>/<span name="totalPeriodNum"></span>)
+            </p>
+        </div>
+        <div class="history-list" style="display: none;">
+            <div class="history-list-title">
+                <span class="left">期数</span>
+                <span class="center">时间</span>
+                <span class="right">金额（元）</span>
+            </div>
+            <!--以下列表根据后台数据动态添加-->
+            <ul class="history-list-content" name="payHistory">
+            </ul>
+        </div>
+        <div id="loadingToast" class="weui_loading_toast">
+            <div class="weui_mask_transparent"></div>
+            <div class="weui_toast">
+                <div class="weui_loading">
+                    <div class="weui_loading_leaf weui_loading_leaf_0"></div>
+                    <div class="weui_loading_leaf weui_loading_leaf_1"></div>
+                    <div class="weui_loading_leaf weui_loading_leaf_2"></div>
+                    <div class="weui_loading_leaf weui_loading_leaf_3"></div>
+                    <div class="weui_loading_leaf weui_loading_leaf_4"></div>
+                    <div class="weui_loading_leaf weui_loading_leaf_5"></div>
+                    <div class="weui_loading_leaf weui_loading_leaf_6"></div>
+                    <div class="weui_loading_leaf weui_loading_leaf_7"></div>
+                    <div class="weui_loading_leaf weui_loading_leaf_8"></div>
+                    <div class="weui_loading_leaf weui_loading_leaf_9"></div>
+                    <div class="weui_loading_leaf weui_loading_leaf_10"></div>
+                    <div class="weui_loading_leaf weui_loading_leaf_11"></div>
+                </div>
+                <p class="weui_toast_content">页面加载中</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../../../public/config/config.js"></script>
+    <script src="../../../public/js/common.js"></script>
+    <script src="../../../public/lib/md5.js"></script>
+    <script src="../../../public/lib/post.js"></script>
+    <script src="../../../public/lib/util.js"></script>
+    <script src="../../../public/js/monthlyPayRent.js?v5"></script>
+</body>
+
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>房租月付</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <!--  新 Bootstrap 核心 CSS 文件  -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!--  jQuery文件。务必在bootstrap.min.js 之前引入  -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <!--  最新的 Bootstrap 核心 JavaScript 文件  -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!--  私有css  -->
+    <link rel="stylesheet" href="../../../public/css/weui.min.css">
+    <link rel="stylesheet" href="../../../public/css/lCalendar.css">
+    <link rel="stylesheet" type="text/css" href="../../../public/css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../../public/css/myContract.css">
+    <link rel="stylesheet" type="text/css" href="../../../public/css/breakContract.css">
+    <style>
+        .ajax-detail {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 5%;
+            width: 90%;
+            background-color: #ccc;
+            padding: 10px;
+        }
+        .ajax-detail .ajax-wrap {
+            padding: 5px;
+            border: 1px dashed red;
+            word-break: break-all;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header class="top">
+        <div class="back-button">
+            <span class="back-icon"></span>
+        </div>
+        <div class="title">
+            我的租约
+        </div>
+        <div class="history">
+            <!-- <span class="history-icon"></span> -->
+        </div>
+    </header>
+    <!--主体-->
+    <div class="landlord-break-tips" style="display: none;">
+        <p>您的房东发起了<span>退租申请</span>，请您尽快处理<i class="arrow-right-icon"></i></p>
+    </div>
+    <section class="main">
+        <div class="main-status">
+            <div class="main-info">
+                <div class="adress-info parties-info">
+                    <p class="contract-number"><span name="contractNo"></span></p>
+                    <p id="break-contract" style="position: absolute;top:14px;right:20px;display: none;"><span class="break-icon"></span>我要退租</p>
+                    <p class="landlord parties">出租方</p>
+                    <p class="landlord-name parties-name"><span name="lcHouseName"></span></p>
+                    <!-- 如果公司地址木有，不显示公司地址 -->
+                    <p class="adress-landlord parties-other companyAddr"><span>公司地址：</span><span name="lcCompanyAddr"></span></p>
+                    <p class="adress-landlord parties-other"><span>房屋地址：</span><span name="lcHouseAddr"></span></p>
+                </div>
+                <div class="member-info parties-info">
+                    <p class="member parties">承租方</p>
+                    <p class="member-name parties-name"><span name="tenantsName"></span></p>
+                    <p class="number-member parties-other"><span>证件号码：</span><span name="idCard"></span></p>
+                    <p class="phone-member parties-other"><span>联系电话：</span><span name="tenantsPhone"></span></p>
+                </div>
+                <div class="rent-info clearfix">
+                    <ul>
+                        <li>
+                            <p class="rent-info-title change">固定租期（不可违约期）</p>
+                            <p class="rent-info-content old"><span name="leaseStartTime"></span> - <span name="leaseEndTime"></span></p>
+                            <p class="rent-info-content pro-break" style="display: none;color: #ff6138;"><span name="leaseStartTime"></span> - <span name="leaseEndTime"></span></p>
+                        </li>
+                        <li>
+                            <p class="rent-info-title">交租日（当月）</p>
+                            <p class="rent-info-content"><span name="payDay"></span>日</p>
+                        </li>
+                        <li>
+                            <p class="rent-info-title">灵活租期（优先续租期）</p>
+                            <p class="rent-info-content"><span name="noFixationStartTime"></span> - <span name="noFixationEndTime"></span></p>
+                        </li>
+                        <li>
+                            <p class="rent-info-title">租金（元）</p>
+                            <p class="rent-info-content"><span name="rent"></span></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="check-contract">
+                    <p><span>查看合同详情</span><span class="ahead-icon"></span></p>
+                </div>
+            </div>
+            <!-- 图标，要根据接口状态切换背景图片，包含待确认、生效中、已失效 -->
+            <div class="main-status-icon unconfirm">
+
+            </div>
+        </div>
+    </section>
+
+    <!-- prompt 对话框 -->
+    <div class="weui_dialog_alert" id="dialog" style="display: none;">
+        <div class="weui_mask"></div>
+        <div class="weui_dialog">
+            <div class="weui_dialog_hd"><strong class="weui_dialog_title"></strong></div>
+            <div class="weui_dialog_bd prompt_text"></div>
+            <div class="weui_dialog_ft">
+                <a href="javascript:;" class="weui_btn_dialog primary">确定</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 提示框 -->
+    <div id="loadingToast" class="weui_loading_toast">
+        <div class="weui_mask_transparent"></div>
+        <div class="weui_toast">
+            <div class="weui_loading">
+                <div class="weui_loading_leaf weui_loading_leaf_0"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_1"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_2"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_3"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_4"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_5"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_6"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_7"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_8"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_9"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_10"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_11"></div>
+            </div>
+            <p class="weui_toast_content">页面加载中</p>
+        </div>
+    </div>
+
+    <!--底部-->
+    <footer>
+        <div class="weui_btn_area btn-submit" style="display: none;">
+            <a class="weui_btn next-step" href="javascript:;" id="btnContractImgNext">下一步</a>
+        </div>
+    </footer>
+
+    <!-- Ajax -->
+    <div class="ajax-detail"></div>
+
+    <!-- 退租流程 -->
+    <div class="break-contract-wrapper" style="width: 100%;height: 100%; position: absolute;top: 0;left: 0;display: none;">
+        <div class="break-bg"></div>
+
+        <div class="step step1">
+            <div class="step-header">
+                <div class="close-button">
+                    <span class="break-close-icon"></span>
+                </div>
+                <div class="title">
+                    退租须知
+                </div>
+            </div>
+            <div class="step-container">
+                <div class="break-tips">
+                    <p>1.退租申请需要房东于当日 24 点前确认；</p>
+                    <p>2.退租造成的各项结算请与房东自行商定；</p>
+                    <p>3.退租日期为次日起至租约到期日；</p>
+                </div>
+                <div class="break-data-wrapper">
+                    <input type="text" readonly="" id="choice-data" placeholder="请选择退租日期" name="input_date" data-lcalendar="2017-01-1,2020-12-31"><span class="arrow-icon"></span>
+                </div>
+
+                <div class="weui_btn_area btn-submit">
+                    <a class="weui_btn disable-click" href="javascript:;" id="applyBreakContract">申请退租</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--确认弹框-->
+    <script src="../../../public/config/config.js?v8"></script>
+    <script src="../../../public/js/common.js?v8"></script>
+    <script src="../../../public/lib/post.js?v8"></script>
+    <script src="../../../public/lib/util.js?v8"></script>
+    <script src="../../../public/js/lCalendar.js"></script>
+    <script src="../../../public/js/myContract.js?v8"></script>
+    <script>
+        var calendar = new lCalendar();
+        calendar.init({
+            'trigger': '#choice-data',
+            'type': 'date'
+        });
+    </script>
+
+</body>
+
+</html>

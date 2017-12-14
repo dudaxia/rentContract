@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,body {
+  width: 100%;
+  height: 100%;
+}
+input {
+  outline: none;
+  border: 0;
+  line-height: 24px;
+  padding: 13px 0;
+  width: 70%;
+  background: transparent;
+  font-size: 14px;
+}
+#login-main {
+  box-sizing: border-box;
+  padding: 0 15px;
+  height: 100%;
+  width: 100%;
+  background: url(../img/banner@3x.png) no-repeat top center;
+  background-size: 100% 100%;
+}
+#logo {
+  padding: 100px 23.6% 34px;
+  height: 42px;
+}
+#logo img {
+  width: 80%;
+}
+
+.form-con {
+
+}
+.form-con .form-item {
+  height: 50px;
+  border-bottom: 1px solid #dedede;
+  padding-left: 33px;
+}
+.form-con .form-item.mobile-phone {
+  position: relative;
+  background: url(../img/mobile_ICON_Copy.png) no-repeat 0 12px;
+}
+.form-con .form-item.mobile-code {
+  background: url(../img/mobileCode_ICON_Copy.png) no-repeat 0 12px;
+}
+.form-con .get-code {
+  position: absolute;
+  right: 0;
+  top: 0;
+  line-height: 50px;
+  font-size: 14px;
+  color: #FF6138;
+  z-index: 1;
+}
+.login-btn {
+  height: 44px;
+  background-color: #FF6138;
+  text-align: center;
+  line-height: 44px;
+  color: #fff;
+  font-size: 16px;
+  margin-top: 40px;
+}
+
+.login-tip {
+  line-height: 36px;
+  font-size: 12px;
+  text-align: center;
+  color: #808080;
+}

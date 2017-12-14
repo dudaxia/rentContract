@@ -1,0 +1,51 @@
+body{
+	background: #475564;
+}
+
+header.top{
+}
+.top .back-button{
+	float: left;
+	width: 10%;
+	height: 100%;
+}
+.top .back-button .back-icon{
+	display: block;
+	width: 10px;
+	height: 16px;
+	margin-top: 14px;
+	background: url(../img/back_white@2x.png) no-repeat;
+	background-size: 100%;
+}
+.top .title{
+	float: left;
+	width: 80%;
+    font-size: 16px;
+    text-align: center;
+}
+.top .history{
+	float: right;
+	width: 24px;
+}
+.top .history .history-icon{
+	display: block;
+	width: 24px;
+	height: 24px;
+	margin-top: 10px;
+	background: url(../img/history@2x.png) no-repeat;
+	background-size: 100%;
+}
+
+section.main{
+	padding: 0 15px;
+}
+footer{
+	margin-top: 20px;
+}
+a:focus, a:hover{
+	color: #FFFFFF;
+    text-decoration: none;
+}
+.btn-submit {
+    background: #FF6138
+}

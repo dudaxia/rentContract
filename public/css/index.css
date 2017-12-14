@@ -1,0 +1,346 @@
+body{
+	background: #475564;
+}
+
+header.top{
+	margin-bottom: 26px;
+}
+.top .back-button{
+	float: left;
+	width: 10%;
+	height: 100%;
+}
+.top .back-button .back-icon{
+	display: block;
+	width: 10px;
+	height: 16px;
+	margin-top: 14px;
+	background: url(../img/back_white@2x.png) no-repeat;
+	background-size: 100%;
+}
+.top .title{
+	float: left;
+	width: 80%;
+    font-size: 16px;
+    text-align: center;
+}
+.top .history{
+	float: right;
+	width: 24px;
+}
+.top .history .history-icon{
+	display: block;
+	width: 24px;
+	height: 24px;
+	margin-top: 10px;
+	background: url(../img/history@2x.png) no-repeat;
+	background-size: 100%;
+}
+
+section.main{
+	padding: 0 15px;
+	margin-bottom: 10px;
+}
+.main .main-status{
+	position: relative;
+	overflow: hidden;
+}
+.main .main-status .main-status-icon{
+  position: absolute;
+  right: -35px;
+  bottom: -35px;
+  width: 140px;
+  height: 140px;
+  background: url(../img/effectiving@2x.png) no-repeat;
+  background-size: 100% 100%;
+  transform: rotate(-30deg);
+}
+.main .main-status .main-status-icon.unconfirm{
+  background: url(../img/unConfirm@2x.png) no-repeat;
+  background-size: 100% 100%;
+}
+.main .main-status .main-status-icon.failure{
+  background: url(../img/failure@2x.png) no-repeat;
+  background-size: 100% 100%;
+}
+.main .main-status .main-status-icon.out-contract{
+  background: url(../img/outContract@2x.png) no-repeat;
+  background-size: 100% 100%;
+}
+.main .main-status .main-status-icon.cancel-contract{
+  background: url(../img/cancelContract@2x.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+@media screen and (max-width: 340px){
+	.main .main-status .main-status-icon{
+		right: -30px;
+		bottom: -30px;
+		width: 110px;
+		height: 110px;
+	}
+}
+.main .main-info{
+	padding: 20px;
+	background: #fff;
+	border: 1px solid #fff;
+	border-radius: 2px;
+}
+.main .main-info .address-info {
+	position: relative;
+}
+.main .main-info .error {
+	position: absolute;
+	right: 0;
+	top: 16px;
+	height: 22px;
+	width: 60px;
+	font-size: 12px;
+	line-height: 20px;
+	color: #ff6138;
+}
+.main .main-info .error .error-icon {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	background: url(../img/quit@2x.png) no-repeat;
+	background-size: cover;
+	vertical-align: middle;
+}
+.main .main-info .parties-info{
+	padding-bottom: 17px;
+	border-bottom: 1px solid #DEDEDE;
+}
+.main .main-info .contract-number{
+	font-size: 12px;
+	color: #C0C0C0;
+	line-height: 12px;
+}
+.main .main-info .parties{
+	margin-top: 20px;
+  margin-bottom: 5px;
+	font-size: 16px;
+  color: #212121;
+  line-height: 16px;
+}
+.main .main-info .parties-name{
+	margin-top: 8px;
+	font-size: 16px;
+	color: #212121;
+	line-height: 20px;
+}
+.main .main-info .parties-other{
+	margin-top: 6px;
+	font-size: 12px;
+	color: #212121;
+	line-height: 15px;
+}
+.main .rent-info{
+  margin-top: 10px;
+}
+.main .rent-info ul{
+  overflow: hidden;
+  -height: 174px;
+  margin-bottom: 0;
+}
+ ul li{
+  -border: 1px solid red;
+  font-size: 12px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  padding: 0 2px;
+}
+.main .rent-info ul li p{
+  line-height: 22px;
+}
+ul li .rent-info-title{
+  float: left;
+  color: #808080;
+}
+ul li .rent-info-content{
+  font-size: 12px;
+  float: right;
+  texta-align: right;
+  color: #808080;
+}
+.main .rent-info ul li .break-wrapper {
+  margin-top: 3px;
+}
+.main .check-contract{
+  text-align: center;
+  font-size: 16px;
+  margin-top: 52px;
+  -color: #ff6138;
+}
+.main .check-contract .ahead-icon{
+  display: inline-block;
+  width: 9px;
+  height: 15px;
+  background: url(../img/turnRight@2x.png) no-repeat;
+  background-size: 100%;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+footer.bottom{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+  background: #fff;
+  height: 108px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.bottom .clause{
+  -webkit-box-flex: 6.8;
+  -moz-box-flex: 6.8;
+  width: 68%;
+    -webkit-flex: 6.8;
+    -ms-flex: 6.8;
+    flex: 6.8;
+    height: 108px;
+    padding: 14px 32px 0 43px;
+}
+.bottom .clause .cluase-content .cluase-icon{
+  display: inline-block;
+  vertical-align: middle;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #212121;
+  border-radius: 50%;
+  margin-left: -28px;
+}
+.bottom .clause .cluase-content .cluase-icon.active{
+  border: 0;
+  background: url(../img/agree@2x.png) no-repeat;
+  background-size: cover;
+}
+.bottom .clause .cluase-content .cluase-content-button{
+  display: inline-block;
+  margin-left: 10px;
+  line-height: 14px;
+  color: #212121;
+}
+.bottom .clause .cluase-content .cluase-content-button .check-cluase{
+  display: inline-block;
+  margin-left: 6px;
+  color: #FF6138;
+}
+.bottom .clause .clause-tip{
+  font-size: 12px;
+  color: #808080;
+  line-height: 18px;
+}
+.bottom .confirm-button{
+  -webkit-box-flex: 3.2;
+  -moz-box-flex: 3.2;
+  width: 32%;
+    -webkit-flex: 3.2;
+    -ms-flex: 3.2;
+    flex: 3.2;
+    background: #FF6138;
+}
+.bottom .confirm-button .confirm-contract-button{
+  height: 108px;
+    line-height: 108px;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    opacity: 0.5;
+}
+.weui_btn {
+    border: none;
+    border-radius: 2px
+}
+.btn-submit {
+    background: #FF6138;
+}
+.btn-submit a, .btn-submit a:visited, .btn-submit a:active {
+  color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+.weui_dialog.dialog_wrapper {
+	width: 65%;
+}
+.weui_dialog_bd.tip-content {
+	color: #000;
+	font-weight: 700;
+	text-align: center;
+}
+#tip-content {
+	text-align: center;
+}
+.weui_btn_dialog.primary.open {
+	color: #FF6138;
+}
+.weui_btn_dialog {
+	font-size: 15px;
+}
+.openin-other {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+}
+.openin-other .arrow-wrapper {
+	position: absolute;
+	top: 10px;
+	right: 20px;
+}
+.openin-other .arrow-wrapper img {
+	width: 90px;
+}
+.openin-other .arrow-wrapper .tip-content {
+	position: absolute;
+  top: 78px;
+  right: 10px;
+  width: 236px;
+  text-align: center;
+  font-size: 20px;
+  line-height: 30px;
+  color: #454545;
+}
+.openin-other .innjia-logo {
+  position: absolute;
+  top: 230px;
+  width: 100%;
+}
+.openin-other .innjia-logo img {
+  width: 100px;
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+}
+.openin-other .download-tips {
+	position: absolute;
+  top: 52%;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 40px;
+}
+.openin-other .download-tips .tip-title {
+	font-size: 20px;
+	color: #808080;
+	line-height: 40px;
+}
+.openin-other .download-tips .install-step {
+	font-size: 16px;
+	color: #454545;
+	line-height: 34px;
+}

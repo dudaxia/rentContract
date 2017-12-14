@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>房租月付</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <!--  新 Bootstrap 核心 CSS 文件  -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!--  jQuery文件。务必在bootstrap.min.js 之前引入  -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <!--  最新的 Bootstrap 核心 JavaScript 文件  -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!--  私有css  -->
+    <link rel="stylesheet" type="text/css" href="../../../public/css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../../public/css/contractHistory.css">
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header class="top">
+        <div class="back-button">
+            <span class="back-icon"></span>
+        </div>
+        <div class="title">
+            历史租约
+        </div>
+        <div class="empty">
+        </div>
+    </header>
+    <!--主体-->
+    <section class="main">
+        <div class="contract-history">
+            <!-- 以下根据接口数据动态生成列表-->
+            <ul>
+                <li>
+                    <p class="time"><span>2017.01.01</span> - <span>2018.01.01</span></p>
+                    <p class="adress">上海上海上海上海上海上海上海上海上海上海上海上海上海上海上海上海上海上海</p>
+                    <span class="detail-icon"></span>
+                </li>
+                <li>
+                    <p class="time"><span>2017.01.01</span> - <span>2018.01.01</span></p>
+                    <p class="adress">上海上海上海上海上海上海上海上海上海上海上海上海上海上海上海上海上海上海</p>
+                    <span class="detail-icon"></span>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <script src="../../../public/config/config.js"></script>
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function(){
+            console.log('hello,world');
+
+        });
+    </script>
+</body>
+
+</html>

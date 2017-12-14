@@ -1,0 +1,225 @@
+html,body {
+	width: 100%;
+	height: 100%;
+}
+header.top{
+	margin-bottom: 26px;
+	background: #475564;
+}
+.top .back-button{
+	float: left;
+	width: 10%;
+	height: 100%;
+}
+.top .back-button .back-icon{
+	display: block;
+	width: 10px;
+	height: 16px;
+	margin-top: 14px;
+	background: url(../img/back_white@2x.png) no-repeat;
+	background-size: 100%;
+}
+.top .title{
+	float: left;
+	width: 80%;
+    font-size: 16px;
+    text-align: center;
+}
+
+section.main{
+	padding:0 15px 80px;
+}
+.main h2{
+	text-align: center;
+}
+
+.sign{
+	overflow: hidden;
+}
+.sign .side{
+	display: block;
+	float: left;
+	width: 50%;
+	height: 100%;
+}
+
+.footer1 {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 60px;
+	background-color: #ff6138;
+}
+
+.footer1 .sign-click {
+	position: absolute;
+	left: 50%;
+	margin-left: -70px;
+	height: 60px;
+	width: 140px;
+	line-height: 60px;
+	font-size: 16px;
+	color: #fff;
+	text-align: center;
+	background: url(../img/sign@2x.png) no-repeat 10px 20px;
+	background-size: 18px 19px;
+	box-sizing: border-box;
+	padding-left: 20px;
+}
+
+.footer2 {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 80px;
+}
+.footer2 .sign-show {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	font-size: 16px;
+	color: #fff;
+}
+
+.footer2 .sign-show .sign-name {
+	float: left;
+	width: 67%;
+	height: 80px;
+	background: url(../img/Group@2x.png) -10px -10px;
+}
+.footer2 .sign-show .sign-name img {
+	max-width: 100%;
+	max-height: 80px;
+}
+.footer2 .sign-show .sure-btn {
+	float: left;
+	width: 33%;
+	line-height: 80px;
+	height: 100%;
+	background-color: #ff6138;
+}
+
+.mobile-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.mobile-wrapper .mobile-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: 0.7;
+}
+
+.mobile-wrapper .mobile-main {
+	position: absolute;
+	left: 50%;
+	top: 188px;
+	margin-left: -147px;
+	width: 294px;
+	height: 212px;
+	background-color: #fff;
+	border-radius: 13px;
+}
+
+.mobile-main {
+	box-sizing: border-box;
+	padding: 0 30px;
+}
+.mobile-main .mobile-tip {
+	line-height: 54px;
+	font-size: 14px;
+	text-align: center;
+	color: #212121;
+}
+.mobile-main .code-wrapper {
+	height: 40px;
+}
+.mobile-main .code-wrapper input {
+	float: left;
+	box-sizing: border-box;
+	height: 40px;
+	width: 120px;
+	padding-left: 15px;
+	border: 1px solid #dedede;
+	out-line: none;
+}
+.mobile-main .code-wrapper .get-code {
+	float: right;
+	display: inline-block;
+	width: 102px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	font-size: 14px;
+	color: #212121;
+	background-color: #dedede;
+	border-radius: 18px;
+	margin-top: 2px;
+}
+
+.btn-wrapper {
+	padding: 20px 0 10px 0;
+}
+.code-btn {
+	display: inline-block;
+	width: 96px;
+	height: 34px;
+	line-height: 34px;
+	font-size: 16px;
+	text-align: center;
+}
+.code-btn.mobile-cancel {
+	float: left;
+	color: #ff6138;
+	border: 1px solid #ebebeb;
+}
+.code-btn.mobile-sure {
+	float: right;
+	color: #fff;
+	background-color: #ff6138;
+}
+
+.draw-wrapper {
+	width: 100%;
+}
+
+.btn-footer {
+	margin-top: 40px;
+}
+.btn-clear {
+	float: left;
+	margin-left: 42px;
+	width: 96px;
+	height: 44px;
+	text-align: center;
+	line-height: 44px;
+	color: #ff6138;
+	border: 1px solid #ebebeb;
+}
+.btn-sure {
+	float: right;
+	margin-right: 42px;
+	width: 96px;
+	height: 44px;
+	text-align: center;
+	line-height: 44px;
+	color: #fff;
+	background-color: #ff6138;
+	border: none;
+}
+.error-tip {
+	display: none;
+	text-align: center;
+  color: red;
+  font-size: 12px;
+  padding-top: 10px;
+}

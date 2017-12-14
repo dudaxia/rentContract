@@ -1,0 +1,132 @@
+html,body {
+	width: 100%;
+	height: 100%;
+}
+
+// 退组流程
+.break-contract-wrapper {
+	width: 100%;
+	height: 100%;
+}
+.break-contract-wrapper .break-bg {
+	width: 100%;
+	height: 100%;
+	background-color: #212121;
+	opacity: 0.85;
+}
+.break-contract-wrapper .step {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	background-color: #fff;
+}
+.break-contract-wrapper .step-header{
+	height: 44px;
+	border-bottom: 1px solid #dedede;
+}
+.break-contract-wrapper .close-button{
+	float: left;
+	width: 10%;
+	height: 100%;
+}
+.break-contract-wrapper .close-button .break-close-icon{
+	display: block;
+	width: 16px;
+	height: 16px;
+	margin-top: 14px;
+	margin-left: 15px;
+	background: url(../img/close_icon@2x.png) no-repeat;
+	background-size: 100%;
+}
+.break-contract-wrapper .title{
+	float: left;
+	width: 80%;
+  font-size: 16px;
+  color: #212121;
+  line-height: 44px;
+  text-align: center;
+}
+.break-contract-wrapper .step-container {
+	width: 100%;
+	height: 256px;
+}
+.break-contract-wrapper .step-container .break-tips {
+	border-bottom: 1px solid #dedede;
+	padding: 15px 0 25px 15px;
+}
+.break-contract-wrapper .step-container .break-tips p {
+	line-height: 24px;
+	font-size: 14px;
+	color: #808080;
+}
+.break-contract-wrapper .break-data-wrapper {
+	position: relative;
+	line-height: 44px;
+	font-size: 16px;
+	color: #212121;
+	padding-left: 15px;
+	border-bottom: 1px solid #dedede;
+}
+.break-contract-wrapper .break-data-wrapper .arrow-icon {
+	position: absolute;
+	right: 15px;
+	top: 17px;
+	display: inline-block;
+	width: 6px;
+	height: 10px;
+	background: url(../img/turnRight@2x.png) no-repeat;
+	background-size: 100%;
+}
+#applyBreakContract {
+	margin: 24px 0;
+}
+#applyBreakContract.disable-click {
+	background-color: #c0c0c0;
+}
+.break-contract-wrapper {
+	position: relative;
+}
+.break-contract-wrapper .confirm-data {
+	float: right;
+	width: 40px;
+	font-size: 14px;
+	line-height: 44px;
+	color: #ff6138;
+}
+#choice-data {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	padding-left: 10px;
+	border: 0;
+	height: 43px;
+}
+.break-data-wrapper {
+	height: 44px;
+}
+
+.landlord-break-tips {
+	position: relative;
+	width: 100%;
+	height: 44px;
+	line-height: 44px;
+	text-align: center;
+	font-size: 14px;
+	color: #212121;
+	background-color: #ffb94d;
+	margin-bottom: 20px;
+}
+.landlord-break-tips span {
+	color: #ff6138;
+}
+.landlord-break-tips i {
+	position: absolute;
+	top: 17px;
+	right: 15px;
+	width: 6px;
+	height: 10px;
+	background: url(../img/turnRight@2x.png) no-repeat;
+	background-size: cover;
+}
